@@ -1,21 +1,30 @@
 class Player {
-  constructor(yourName, counter) {
+  constructor(yourName, yourCounter, yourOrder) {
     this.name = yourName;
-    this.counter = counter;
+    this.counter = yourCounter;
+    this.order = yourOrder;
   }
 
-  sayHello() {
-    console.log(`Hello my name is ${this.yourName} my counter is ${this.counter}`);
+  sayHi() {
+    console.log(`${this.yourName} is Player ${this.yourOrder}. Your counter is ${this.yourCounter}`);
+  }
+
+  move(array, element, boardState) {
+    element.textContent = `${this.counter}`;
+    boardState[array.indexOf(element)] = this.counter;
+    console.log(boardState);
   }
 }
+
+let boardState = ['', '', '', '', '', '', '', '', ''];
+
 
 const game = (() => {
   let playersArray = [];
   let squareArray = Array.from(document.querySelectorAll('.item'));
-  console.log(squareArray); 
-  let boardState = ['', '', '', '', '', '', '', '', ''];
-  playersArray.push(new Player('usama', 'O'));
-  playersArray.push(new Player('nour', 'X'));
+  playersArray.push(new Player('usama', 'O', '1'));
+  playersArray.push(new Player('nour', 'X', '2'));
+
   const addEventListenerList = (array) => {
     let playerOne = 0;
 
@@ -23,16 +32,14 @@ const game = (() => {
       element.addEventListener('click', () => {
         if (element.textContent === '') {
           if (playerOne === 0) {
-            element.textContent = `${playersArray[playerOne].counter}`;
-            boardState[element] = playersArray[playerOne].counter;
+            playersArray[playerOne].move(array, element, boardState);
             playerOne = 1;
           } else {
-            element.textContent = `${playersArray[playerOne].counter}`;
-            boardState[element] = playersArray[playerOne].counter;
+            playersArray[playerOne].move(array, element, boardState);
             playerOne = 0;
           }
         } else {
-          console.log('Cell occupied... Try another cell!');
+          alert('Cell occupied... Try another cell!');
         }
       });
     });
@@ -41,7 +48,3 @@ const game = (() => {
   // insert the win logic here
   addEventListenerList(squareArray);
 })();
-/*
-function logic() {
-  if ()
-}*/
