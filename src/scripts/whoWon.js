@@ -25,10 +25,6 @@ const wins = (board) => {
 };
 
 const whoWon = (board, players) => {
-  // takes the win counter and players,
-  // maps the player to the correct name specified.
-
-  // checks the board and returns the winner
   const winCounter = wins(board);
   if (winCounter === '') return false;
   let winner = players.map((player) => {
