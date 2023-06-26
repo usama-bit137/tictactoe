@@ -2,14 +2,33 @@
   --box-dimension: 100px;
   font-family: system-ui;
 }
-.grid {
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.game {
+  display: flex;
+  padding-top: 50px;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  width: 100vw;
+  height: 100vh;
+}
+
+input {
+  width: 200px;
+}
+
+.container {
   display: grid;
   background-color: white;
   grid-template: repeat(3, var(--box-dimension)) / repeat(
       3,
       var(--box-dimension)
     );
-  margin: auto;
 }
 
 .item {
