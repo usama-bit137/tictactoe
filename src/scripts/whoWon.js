@@ -34,7 +34,6 @@ const whoWon = (board, players) => {
   let winner = players.map((player) => {
     if (player.counter === winCounter) return player.name;
   });
-  console.log(winner);
   return winner.join('');
 };
 
