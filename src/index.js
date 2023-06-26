@@ -5,12 +5,11 @@ import './style.css';
 let boardState = ['', '', '', '', '', '', '', '', ''];
 let playersArray = [];
 
-playersArray.push(new Player('player 1', 'O', '1'));
-playersArray.push(new Player('player 2', 'X', '2'));
+const playerOneName = document.querySelector("[name = 'player-one']");
+playersArray.push(new Player('usama', 'O', '1'));
+playersArray.push(new Player('nour', 'X', '2'));
 
 (function () {
-  // IIFE used in place of module.
-  // does not pollute global namespace
   let array = Array.from(document.querySelectorAll('.item'));
   addEventListenerList(array, playersArray, boardState);
 })();
