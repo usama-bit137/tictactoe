@@ -12,4 +12,5 @@ playersArray.push(new Player('nour', 'X', '2'));
 (function () {
   let array = Array.from(document.querySelectorAll('.item'));
   addEventListenerList(array, playersArray, boardState);
+  console.log(`input: ${playerOneName.textContent}`);
 })();
