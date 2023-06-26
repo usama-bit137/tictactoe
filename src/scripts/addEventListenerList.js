@@ -1,4 +1,4 @@
-import whoWon from './wins';
+import whoWon from './whoWon';
 
 const addEventListenerList = (boardArray, playersArray, boardState) => {
   let turn = 0;
