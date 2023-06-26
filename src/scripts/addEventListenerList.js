@@ -1,4 +1,4 @@
-import wins from './wins';
+import whoWon from './wins';
 
 const addEventListenerList = (boardArray, playersArray, boardState) => {
   let turn = 0;
@@ -7,15 +7,18 @@ const addEventListenerList = (boardArray, playersArray, boardState) => {
       turn = turn % 2;
       if (element.textContent === '') {
         playersArray[turn].move(boardArray, element, boardState);
+        // console.log(playersArray[turn].name);
       } else {
         alert('Cell occupied... Try another cell!');
         turn++;
       }
-      const winner = wins(boardState);
+
+      const winner = whoWon(boardState, playersArray);
 
       if (winner) {
         console.log(`${winner} is the winner!`);
         // turn this into a querySelector when ready!
+        // alert(`${winner} is the winner!`);
       }
       turn++;
     });
