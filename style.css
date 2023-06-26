@@ -1,16 +1,20 @@
-:root{
-    --box-dimension: 100px;
-    font-family: system-ui; 
-  }
-  .grid{
-    display: grid;
-    background-color: white;
-    grid-template: repeat(3, var(--box-dimension)) / repeat(3, var(--box-dimension));
-  }
-  
-  .item{
-    border: 1px solid black;  
-    text-align: center;
-    vertical-align: middle;
-    line-height: var(--box-dimension); 
-  }
+:root {
+  --box-dimension: 100px;
+  font-family: system-ui;
+}
+.grid {
+  display: grid;
+  background-color: white;
+  grid-template: repeat(3, var(--box-dimension)) / repeat(
+      3,
+      var(--box-dimension)
+    );
+  margin: auto;
+}
+
+.item {
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+  line-height: var(--box-dimension);
+}
