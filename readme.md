@@ -40,7 +40,9 @@ if (playerOne && playerTwo) {
     playersArray.push(new Player(playerTwo, 'X', '2'))
 }
 ```
-There are two pre-fixed values: `O` for `playerOne` and `X` for `playerTwo`. Finally, we have the `order` property which seems to be redundant, so it should be removed. We also have a method attached to the `class` called `move`. The `move` method takes three arguments, `array`, `element` and `boardState`. 
+There are two pre-fixed values: `O` for `playerOne` and `X` for `playerTwo`. Finally, we have the `order` property which seems to be redundant, so it should be removed. 
+
+We also have a method attached to the `class` called `move`. The `move()` method takes three arguments, `array`, `element` and `boardState`. 
 - `array` is the set of all grid items in the HTML (`Array.from(document.querySelectorAll('.item'))`),
 - `element` is the element that the player clicked on in the tic-tac-toe board,
 - `boardState` is a book-keeping array of the state of the board, for example,
@@ -59,3 +61,8 @@ There are two pre-fixed values: `O` for `playerOne` and `X` for `playerTwo`. Fin
    [___|___|___] => ['O', '', 'X', '', '', '', '', '', '',]
    [___|___|___]
   ```
+  - Inside the IIFE, the `boardState` is immediately set to the blank state to mach with the board.
+
+The `move()` method will then:
+- Place the relevant counter on the game board: ``element.textContent = `${this.counter}` ``
+- Append and update the `boardState` array: `boardState[array.indexOf(element)] = this.counter`
