@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 ## How does it work?
-The basic structure of the game is the following IIFE:
+The basic structure of the game is the following IIFE in `src/index.js`:
 
 ```js
 (function () {
