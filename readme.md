@@ -43,10 +43,19 @@ if (playerOne && playerTwo) {
 There are two pre-fixed values: `O` for `playerOne` and `X` for `playerTwo`. Finally, we have the `order` property which seems to be redundant, so it should be removed. We also have a method attached to the `class` called `move`. The `move` method takes three arguments, `array`, `element` and `boardState`. 
 - `array` is the set of all grid items in the HTML (`Array.from(document.querySelectorAll('.item'))`),
 - `element` is the element that the player clicked on in the tic-tac-toe board,
-- `boardState` is a book-keeping array of the state of the board, for example, the empty
-```js
+- `boardState` is a book-keeping array of the state of the board, for example,
+  - the empty board translates to the following  `boardState`:
+  ```js
       Board   =>              boardState
-   [__|__| _]
-   [__|__|__] => ['', '', '', '', '', '', '', '', '',]
-   [__|__|__]
-```
+   [___|___|___]
+   [___|___|___] => ['', '', '', '', '', '', '', '', '',]
+   [___|___|___]
+  ```
+     
+  -  the board with a `O` in the top-left cell and an `X` in the top-right cell translates to the following `boardState`:
+  ```js
+      Board   =>              boardState
+   [ O |___| X ]
+   [___|___|___] => ['O', '', 'X', '', '', '', '', '', '',]
+   [___|___|___]
+  ```
