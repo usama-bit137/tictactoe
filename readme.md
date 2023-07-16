@@ -1,5 +1,6 @@
 # Tic-Tac-Toe
 ## How does it work?
+<<<<<<< HEAD
 The basic structure of the game is the following IIFE in `src/index.js`:
 
 ```js
@@ -66,3 +67,7 @@ We also have a method attached to the `class` called `move`. The `move()` method
 The `move()` method will then:
 - Place the relevant counter on the game board: ``element.textContent = `${this.counter}` ``
 - Append and update the `boardState` array: `boardState[array.indexOf(element)] = this.counter`
+=======
+
+## TensorFlow.js?
+>>>>>>> rud-ai

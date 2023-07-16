@@ -5,20 +5,19 @@ import './style.css';
 let playersArray = [];
 
 (function () {
-  // This works but tedious
-  // let playerOne = prompt('Player One');
-  // let playerTwo = prompt('Player Two');
+  let playerOne = prompt('Player 1', 'Player 1');
+  let playerTwo = prompt('Player 2', 'Player 2');
 
-  let playerOne = 'usama';
-  let playerTwo = 'nour';
+  let boardState = ['', '', '', '', '', '', '', '', ''];
+  const array = Array.from(document.querySelectorAll('.item'));
 
   if (playerOne && playerTwo) {
     playersArray.push(new Player(playerOne, 'O', '1'));
     playersArray.push(new Player(playerTwo, 'X', '2'));
-
-    let boardState = ['', '', '', '', '', '', '', '', ''];
-
-    let array = Array.from(document.querySelectorAll('.item'));
-    addEventListenerList(array, playersArray, boardState);
+  } else if (playerOne) {
+    playersArray.push(new Player(playerOne, 'O', '1'));
+    playersArray.push(new Player('Haley Joel', 'X', '2')); // AI
   }
+
+  addEventListenerList(array, playersArray, boardState);
 })();
